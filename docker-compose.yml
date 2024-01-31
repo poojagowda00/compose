@@ -1,0 +1,17 @@
+version: '3.0'
+services:
+  ng_con: 
+   image: nginx
+   ports:
+     - "6543:80"
+   volumes:
+     - /home/ec2-user/dir_ng:/con1_dir
+
+  my_con:
+   image: mysql
+   environment:
+     - MYSQL_ROOT_PASSWORD=secretpass
+   volumes:
+     - /home/ec2-user/dir2_my:/con2_dir
+    
+       
