@@ -1,0 +1,36 @@
+version: '3.0'
+services:
+  cont_python:
+   image: python
+   ports:
+     - "1324:8000"
+   volumes:
+     - /home/ec2-user/demo/dir1_python:/con_python
+
+  cont_ubuntu:
+    image: ubuntu:22.04
+    volumes:
+      - /home/ec2-user/demo/dir2_ubuntu:/con_ubuntu
+
+  cont_redis:
+    image: redis
+    ports:
+      - "7645:6379"
+    volumes:
+      - /home/ec2-user/demo/dir3_redis:/con_redis
+
+  cont_jenkins:
+    image: jenkins/jenkins
+    ports:
+      - "9787:8080"
+    volumes:
+      - /home/ec2-user/demo/dir4_jen:/con_jen
+
+  cont_maven:
+    image: maven
+    ports:
+      - "7642:8080"
+    volumes:
+      - /home/ec2-user/demo/dir5_mav:/con_mav
+
+
